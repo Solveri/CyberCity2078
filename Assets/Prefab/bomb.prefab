@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 835159540499024809}
   - component: {fileID: 835159540499024810}
   - component: {fileID: 835159540499024811}
+  - component: {fileID: 8832014421787461811}
   m_Layer: 0
   m_Name: bomb
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835159540499024790}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.05808256, y: -0, z: -0, w: 0.9983118}
   m_LocalPosition: {x: 960, y: 610, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
@@ -133,3 +134,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8832014421787461811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835159540499024790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55606f1685c8a54ba0e13975ad05276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explode: {fileID: 2527285415217904248, guid: eeb1f2127a0467748b5d2ffcf2f9f34b, type: 3}
+  RotateBomb: {fileID: 835159540499024811}
