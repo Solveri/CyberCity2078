@@ -8,17 +8,22 @@ public class Projectile : MonoBehaviour
 
     
     public float bulletSpeed = 15f;
-
+    public float lifeTime = 3f;
+    
 
     private void Start()
     {
-        rb.velocity = transform.right * bulletSpeed;
+        rb.velocity = transform.right * bulletSpeed * Time.deltaTime;
+        StartCoroutine(DestoryRoutine());
     }
     // Start is called before the first frame update
-   
 
-    // Update is called once per frame
-   
+    private IEnumerator DestoryRoutine()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
