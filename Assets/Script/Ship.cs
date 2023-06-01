@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
@@ -6,11 +5,6 @@ public class Ship : MonoBehaviour
     [SerializeField] GameObject Bomb;
 
     private float Speed = 4f;
-
-    private void Start()
-    {
-        Invoke("Spawn", 2.0f);
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -25,14 +19,5 @@ public class Ship : MonoBehaviour
 
             Speed *= -1;
         }
-    }
-
-    void Spawn()
-    {
-        float SpawnInterval = Random.Range(1f, 3f);
-
-        Instantiate(Bomb, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-
-        Invoke("Spawn", SpawnInterval);
     }
 }

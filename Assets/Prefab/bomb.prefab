@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explode: {fileID: 2527285415217904248, guid: eeb1f2127a0467748b5d2ffcf2f9f34b, type: 3}
   RotateBomb: {fileID: 835159540499024811}
+  AirPlaine: {fileID: 0}
