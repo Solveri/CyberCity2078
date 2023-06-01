@@ -23,9 +23,9 @@ public class Projectile : MonoBehaviour
         yield return new WaitForSeconds(lifeTime);
         Destroy(gameObject);
     }
-    
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Hey");
     }
