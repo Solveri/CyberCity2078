@@ -10,7 +10,8 @@ public class InputKeyController : MonoBehaviour,IPointerDownHandler, IPointerUpH
         Left,
         Up,
         Down,
-        Right
+        Right,
+        Swing
     }
     public Keys key;
     public bool isPressed;
