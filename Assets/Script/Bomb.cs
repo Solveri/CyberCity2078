@@ -15,7 +15,9 @@ public class Bomb : MonoBehaviour
 
         Explode.SetActive(false);
 
-        Invoke("Spawn", 2.0f);
+        if (tag == "1") { Invoke("Spawn", 1f); }
+
+        if (tag == "2") { Invoke("Spawn", 4f); }
     }
 
     // Update is called once per frame
