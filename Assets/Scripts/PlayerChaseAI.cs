@@ -11,7 +11,7 @@ public class PlayerChaseAI : MonoBehaviour
     [SerializeField] Animator attackAnimator;
     [SerializeField] float speed = 3f;
     [SerializeField] float MaxDistance = 1f;
-    [SerializeField] float attackCooldown = 0.5f;
+    //[SerializeField] float attackCooldown = 0.5f;
 
     float distance;
     bool isInRange = false;

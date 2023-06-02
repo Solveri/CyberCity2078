@@ -8,8 +8,10 @@ public class EnemyScript : MonoBehaviour
 {
     // Probably would have used a "character" base class to inherit from, but we have yet to properly learn it in C#
 
-    [SerializeField] int maxHP = 10;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] ScoreScript scoreManager;
+    [SerializeField] int maxHP = 10;
+    [SerializeField] int enemyScore = 100;
     [SerializeField] float deathAnimationDuration = 1f;
 
     private bool isDead = false;
@@ -25,7 +27,6 @@ public class EnemyScript : MonoBehaviour
     {
         if (currentHP == 0) isDead = true;
         if (isDead) KillEnemy();
-        TakeDamage(1);
     }
 
     public void TakeDamage(int dmg)
@@ -40,7 +41,7 @@ public class EnemyScript : MonoBehaviour
     private void KillEnemy()
     {
         DeathAnimation();
-        Destroy(this);
+        scoreManager.addScore(enemyScore);
         LimitSpawnEnemyScript.DecreaseEnemyAmount();
     }
 
@@ -53,6 +54,6 @@ public class EnemyScript : MonoBehaviour
         spriteRenderer.DOFade(0f, deathAnimationDuration);
 
         // Darken in color
-        spriteRenderer.DOColor(Color.black, deathAnimationDuration);
+        spriteRenderer.DOColor(Color.black, deathAnimationDuration).OnComplete(() => Destroy(gameObject));
     }
 }

@@ -23,6 +23,6 @@ public class LimitSpawnEnemyScript : MonoBehaviour
     }
     public static void DecreaseEnemyAmount()
     {
-        enemyAmount++;
+        enemyAmount--;
     }
 }
