@@ -4,7 +4,7 @@ public class Ship : MonoBehaviour
 {
     [SerializeField] GameObject Bomb;
 
-    private float Speed = 4f;
+    private float Speed = -4f;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -15,7 +15,7 @@ public class Ship : MonoBehaviour
         //Limit of the ship
         if (transform.position.x <= -100 || transform.position.x >= 2100)
         {
-            transform.localScale = new Vector3(transform.localScale.x * -1, 24, 1);
+            transform.localScale = new Vector3(transform.localScale.x * -1, 223, 1);
 
             Speed *= -1;
         }
