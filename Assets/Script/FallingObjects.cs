@@ -7,30 +7,33 @@ public class FallingObjects : MonoBehaviour
     [SerializeField] GameObject Falling_Object;
 
     // Update is called once per frame
-    [System.Obsolete]
     void FixedUpdate()
     {
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
-            switch (touch.phase)
-            {
-                case TouchPhase.Began:
-                    Falling_Object.active = true;
-                    Falling_Object.transform.position = new Vector2(touch.position.x, touch.position.y);
-                    break;
+            Falling_Object.SetActive(true);
+            Falling(touch);
+        }
+    }
 
-                case TouchPhase.Moved:
-                    int Speed =+ 1;
-                    Falling_Object.transform.Translate(0, Speed, 0);
-                    break;
+    private void Falling(Touch touch)
+    {
+        switch (touch.phase)
+        {
+            case TouchPhase.Began:
+                Falling_Object.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
+                break;
 
-                case TouchPhase.Ended:
-                    Speed = 1;
-                    Falling_Object.transform.Translate(0, Speed, 0);
-                    break;
-            }
+            case TouchPhase.Moved:
+                Falling_Object.transform.position = new Vector2(touch.position.x, touch.position.y);
+                break;
+
+            case TouchPhase.Ended:
+                Debug.Log("End Touch");
+                transform.Translate(0, -200, 0);
+                break;
         }
     }
 }
