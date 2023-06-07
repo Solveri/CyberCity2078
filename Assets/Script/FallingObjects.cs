@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FallingObjects : MonoBehaviour
 {
-    [SerializeField] GameObject Falling_Object;
+    private bool Dragging = false;
+
+    [SerializeField] SpriteRenderer Falling_Object;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -13,7 +15,6 @@ public class FallingObjects : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            Falling_Object.SetActive(true);
             Falling(touch);
         }
     }
@@ -23,6 +24,7 @@ public class FallingObjects : MonoBehaviour
         switch (touch.phase)
         {
             case TouchPhase.Began:
+                Falling_Object.enabled = true;
                 Falling_Object.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
                 break;
 
@@ -31,8 +33,7 @@ public class FallingObjects : MonoBehaviour
                 break;
 
             case TouchPhase.Ended:
-                Debug.Log("End Touch");
-                transform.Translate(0, -200, 0);
+                transform.Translate(0, 4, 0);
                 break;
         }
     }
