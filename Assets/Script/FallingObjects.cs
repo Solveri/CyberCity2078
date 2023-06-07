@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class FallingObjects : MonoBehaviour
 {
-    private bool Dragging = false;
+    [SerializeField] Rigidbody2D Sign1;
+    [SerializeField] Animator SignAnimation1;
+    [SerializeField] Animator SignAnimation2;
 
-    [SerializeField] SpriteRenderer Falling_Object;
+    Vector3 SignPosition;
+
+    void Start()
+    {
+        Sign1.bodyType = RigidbodyType2D.Static;
+
+        SignPosition = Sign1.position;
+    }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.touchCount > 0)
         {
@@ -24,17 +33,26 @@ public class FallingObjects : MonoBehaviour
         switch (touch.phase)
         {
             case TouchPhase.Began:
-                Falling_Object.enabled = true;
-                Falling_Object.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
+                SignAnimation1.SetBool("Touched", true);
+                SignAnimation2.SetBool("Touched", true);
                 break;
 
             case TouchPhase.Moved:
-                Falling_Object.transform.position = new Vector2(touch.position.x, touch.position.y);
+                SignAnimation1.SetBool("Touched", true);
+                SignAnimation2.SetBool("Touched", true);
                 break;
 
             case TouchPhase.Ended:
-                transform.Translate(0, 4, 0);
+                SignAnimation1.SetBool("Touched", false);
+                SignAnimation2.SetBool("Touched", false);
+                Sign1.bodyType = RigidbodyType2D.Dynamic;
                 break;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        transform.Translate(0, SignPosition.y - transform.position.y, 0);
+        Sign1.bodyType = RigidbodyType2D.Static;
     }
 }
