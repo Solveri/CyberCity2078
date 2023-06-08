@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public InputKeyController RightKey;
     public InputKeyController SwingKey;
     public InputKeyController ShootKey;
+ 
 
 
     public float speed = 5f;
@@ -21,6 +23,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sr;
+    [SerializeField] AmmoManagement am;
+    [SerializeField] CanvasController cc;
 
     [SerializeField] GameObject ShootPoint;
     [SerializeField] GameObject BulletPreFabs;
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     private Vector2 dir;
+    private bool isAnimPlaying = false; 
 
 
    
@@ -66,7 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         
 
-        if (LeftKey.key == InputKeyController.Keys.Left && LeftKey.isPressed && isGrounded)
+        if (LeftKey.key == InputKeyController.Keys.Left && LeftKey.isPressed && isGrounded && !HasSwang)
         {
             dir = Vector2.left;
             rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, 0);
@@ -79,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        else if (RightKey.key == InputKeyController.Keys.Right && RightKey.isPressed && isGrounded)
+        else if (RightKey.key == InputKeyController.Keys.Right && RightKey.isPressed && isGrounded && !HasSwang)
         {
             dir = Vector2.right;
             rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, 0);
@@ -93,25 +98,37 @@ public class PlayerController : MonoBehaviour
         }
         else if (isGrounded)
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
         }
         
         if (UpKey.key == InputKeyController.Keys.Up && UpKey.isPressed && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-        if(SwingKey.key == InputKeyController.Keys.Swing && SwingKey.isPressed && !HasSwang)
+        if(SwingKey.key == InputKeyController.Keys.Swing && SwingKey.isPressed && !HasSwang && !isAnimPlaying )
         {
             anim.SetTrigger("Attack");
             HasSwang = true;
+            isAnimPlaying = true;
             StartCoroutine(RestSwing(swingCooldown));
         }
-        else if (ShootKey.key == InputKeyController.Keys.Shoot && ShootKey.isPressed && !HasShot)
+        else if (ShootKey.key == InputKeyController.Keys.Shoot && ShootKey.isPressed && !HasShot &&!isAnimPlaying)
         {
-            anim.SetTrigger("Shoot");
-            HasShot = true;
-            ShootBullet();
-            StartCoroutine(RestGun(gunCooldown));
+            am.CheckMagCapacity();
+            if (am.isMagEmpty)
+            {
+                return;
+            }
+            else
+            {
+                anim.SetTrigger("Shoot");
+                HasShot = true;
+                isAnimPlaying = true;
+                ShootBullet();
+                cc.UpdateAmmoText();
+                StartCoroutine(RestGun(gunCooldown));
+            }
+            
         }
        
 
@@ -126,16 +143,21 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         HasSwang = false;
+        isAnimPlaying = false;
     }
     private IEnumerator RestGun(float delay)
     {
         yield return new WaitForSeconds(delay);
         HasShot = false;
+        isAnimPlaying = false;
     }
     public void ShootBullet()
     {
+        
         newBullet = Instantiate(BulletPreFabs, ShootPoint.transform.position, ShootPoint.transform.rotation);
-      
+        am.currentBulletsInMagazine--;
+
+       
         
         
     }
