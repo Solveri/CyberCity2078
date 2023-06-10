@@ -20,14 +20,17 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 #elif UNITY_ANDROID
         _adUnitId = _androidAdUnitId;
 #endif
+
+        // Disable the button until the ad is ready to show:
+        _showAdButton.interactable = true;
     }
 
     // Call this public method when you want to get an ad ready to show.
     public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
-        Debug.Log("Loading Ad: " + _adUnitId);
-        Advertisement.Load(_adUnitId, this);
+        Debug.Log("Loading Ad: " + _androidAdUnitId);
+        Advertisement.Load(_androidAdUnitId, this);
     }
 
     // If the ad successfully loads, add a listener to the button and enable it:
@@ -50,7 +53,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         // Disable the button:
         _showAdButton.interactable = false;
         // Then show the ad:
-        Advertisement.Show(_adUnitId, this);
+        Advertisement.Show(_androidAdUnitId, this);
     }
 
     // Implement the Show Listener's OnUnityAdsShowComplete callback method to determine if the user gets a reward:
