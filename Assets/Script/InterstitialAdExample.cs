@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
 public class InterstitialAdExample : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
-    [SerializeField] string _androidAdUnitId = "Interstitial_Android";
-    [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
-    string _adUnitId;
+    [SerializeField] string _androidAdUnitId = "5309426";
+    [SerializeField] string _iOsAdUnitId = "5309427";
+
+    private string _adUnitId;
 
     void Awake()
     {
