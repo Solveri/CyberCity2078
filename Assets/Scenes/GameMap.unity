@@ -794,6 +794,7 @@ GameObject:
   - component: {fileID: 479935598}
   - component: {fileID: 479935597}
   - component: {fileID: 479935596}
+  - component: {fileID: 479935600}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -845,7 +846,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1594572509}
+      - m_Target: {fileID: 479935600}
         m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
         m_MethodName: LoadAd
         m_Mode: 1
@@ -857,7 +858,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1594572509}
+      - m_Target: {fileID: 479935600}
         m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
@@ -928,6 +929,21 @@ RectTransform:
   m_AnchoredPosition: {x: 210.5, y: 38}
   m_SizeDelta: {x: 421, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &479935600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479935595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3bd7be1c8c76a4895018b91f2d5e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showAdButton: {fileID: 479935596}
+  _androidAdUnitId: 5309426
+  _iOSAdUnitId: 5309427
 --- !u!1 &530940603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2527285415217904248, guid: eeb1f2127a0467748b5d2ffcf2f9f34b, type: 3}
@@ -1300,7 +1316,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1594572511}
   - component: {fileID: 1594572510}
-  - component: {fileID: 1594572509}
   m_Layer: 0
   m_Name: AdsManager
   m_TagString: Untagged
@@ -1308,21 +1323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1594572509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594572508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b3bd7be1c8c76a4895018b91f2d5e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showAdButton: {fileID: 479935596}
-  _androidAdUnitId: 5309426
-  _iOSAdUnitId: 5309427
 --- !u!114 &1594572510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,6 +1338,7 @@ MonoBehaviour:
   _androidGameId: 5309426
   _iOSGameId: 5309427
   _testMode: 1
+  RewardedAdsButton: {fileID: 479935600}
 --- !u!4 &1594572511
 Transform:
   m_ObjectHideFlags: 0

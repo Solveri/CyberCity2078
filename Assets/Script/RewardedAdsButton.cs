@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Advertisements;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "5309426";
     [SerializeField] string _iOSAdUnitId = "5309427";
-
-    private string _adUnitId = null; // This will remain null for unsupported platforms
+    string _adUnitId = null; // This will remain null for unsupported platforms
 
     void Awake()
     {
@@ -22,15 +19,15 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 #endif
 
         // Disable the button until the ad is ready to show:
-        _showAdButton.interactable = true;
+        _showAdButton.interactable = false;
     }
 
     // Call this public method when you want to get an ad ready to show.
     public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
-        Debug.Log("Loading Ad: " + _androidAdUnitId);
-        Advertisement.Load(_androidAdUnitId, this);
+        Debug.Log("Loading Ad: " + _adUnitId);
+        Advertisement.Load(_adUnitId, this);
     }
 
     // If the ad successfully loads, add a listener to the button and enable it:
@@ -53,7 +50,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         // Disable the button:
         _showAdButton.interactable = false;
         // Then show the ad:
-        Advertisement.Show(_androidAdUnitId, this);
+        Advertisement.Show(_adUnitId, this);
     }
 
     // Implement the Show Listener's OnUnityAdsShowComplete callback method to determine if the user gets a reward:
