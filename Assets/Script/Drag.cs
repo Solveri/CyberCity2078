@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
-    [SerializeField] Collider2D Life;
-
     void Update()
     {
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);
+            Touch touch = Input.GetTouch(0); // get first touch since touch count is greater than zero
 
-            if (touch.position.x == Life.transform.position.x && touch.position.y == Life.transform.position.y)
+            if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
             {
-                Debug.Log("Clicked");
-            }
+                // get the touch position from the screen touch to world point
+                Vector2 touchedPos = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
 
-            else
-            {
-                Debug.Log(touch.position.x + " " + Life.transform.position.x + " " + touch.position.y + " " + Life.transform.position.y);
+                // lerp and set the position of the current object to that of the touch, but smoothly over time.
+                transform.position = Vector3.Lerp(transform.position, touchedPos, Time.deltaTime);
             }
         }
     }
