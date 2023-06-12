@@ -1004,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 210.49994, y: 62}
+  m_AnchoredPosition: {x: 210.5, y: 62}
   m_SizeDelta: {x: 421, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589922959
@@ -1802,6 +1802,7 @@ GameObject:
   - component: {fileID: 1897743760}
   - component: {fileID: 1897743759}
   - component: {fileID: 1897743761}
+  - component: {fileID: 1897743762}
   m_Layer: 0
   m_Name: ladder
   m_TagString: Untagged
@@ -1902,6 +1903,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7793255, y: 8.54}
   m_EdgeRadius: 0
+--- !u!114 &1897743762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897743758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8876c655dbcd4c44999356ee4b70c49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Life: {fileID: 1897743761}
 --- !u!1 &1983128583
 GameObject:
   m_ObjectHideFlags: 0
