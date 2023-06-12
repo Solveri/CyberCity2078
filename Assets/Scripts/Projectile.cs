@@ -29,5 +29,12 @@ public class Projectile : MonoBehaviour
     {
         Debug.Log("Hey");
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("player"))
+        {
+            collision.gameObject.GetComponent<PlayerHealthSystem>().TakeDamage(10);
+        }
+    }
 
 }
