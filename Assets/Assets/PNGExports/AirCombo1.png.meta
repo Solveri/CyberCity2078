@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbccf5d0935b9b04a96c77f6b26ec9d4
+guid: abb342501f0ec4741a5df2754514b1da
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -105,12 +105,12 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -129,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punk_idle_0
+      name: AirCombo1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 80
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf47e0656e73d0243be71bc274e13508
-      internalID: 1192823450
+      spriteID: b624925f4fa52764d8c687996fc4da78
+      internalID: 1365959132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_idle_1
+      name: AirCombo1_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 0
-        width: 48
+        width: 80
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ad169fb613f254bb280fc72696ecc7
-      internalID: -91037563
+      spriteID: 2f4ffdd9a6032b84f93dd81a2c7a024c
+      internalID: -1371332751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_idle_2
+      name: AirCombo1_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 160
         y: 0
-        width: 48
+        width: 80
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec7e2a6be3c5b324fa318a6d90e1b450
-      internalID: 403775186
+      spriteID: b54578d6d21cee64aba527cbb4b40d0d
+      internalID: 286797371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_idle_3
+      name: AirCombo1_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 240
         y: 0
-        width: 48
+        width: 80
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,8 +206,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc9802d39f07118449ce801e39d34df0
-      internalID: 1454620337
+      spriteID: 8aeb81315400fcc4ea32c12737b95b1e
+      internalID: -867262104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCombo1_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7612f86bee57532478c109abc01d5a9c
+      internalID: -1854425006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCombo1_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df15fa9ef7d18744e81381ccc736059c
+      internalID: -94127972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCombo1_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3143ac5f08fdb02458c3a3400732c3da
+      internalID: -622828986
       vertices: []
       indices: 
       edges: []
@@ -223,10 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Punk_idle_0: 1192823450
-      Punk_idle_1: -91037563
-      Punk_idle_2: 403775186
-      Punk_idle_3: 1454620337
+      AirCombo1_0: 1365959132
+      AirCombo1_1: -1371332751
+      AirCombo1_2: 286797371
+      AirCombo1_3: -867262104
+      AirCombo1_4: -1854425006
+      AirCombo1_5: -94127972
+      AirCombo1_6: -622828986
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
