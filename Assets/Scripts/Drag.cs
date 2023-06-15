@@ -19,5 +19,10 @@ public class Drag : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, touchedPos, Time.deltaTime);
             }
         }
+
+        else
+        {
+            transform.position = new Vector2(1600, 43);
+        }
     }
 }
