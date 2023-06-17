@@ -29,6 +29,7 @@ public class FallingObjects : MonoBehaviour
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 TouchCounter++;
+                Invoke("RestartCount", 1);
             }
 
             Falling(Input.GetTouch(0));
@@ -56,7 +57,6 @@ public class FallingObjects : MonoBehaviour
                 case TouchPhase.Ended:
                     SignAnimation1.SetBool("Touched", false);
                     SignAnimation2.SetBool("Touched", false);
-                    TouchCounter = 0;
                     Sign1.bodyType = RigidbodyType2D.Dynamic;
                     break;
             }
@@ -67,5 +67,10 @@ public class FallingObjects : MonoBehaviour
     {
         transform.Translate(0, SignPosition.y - transform.position.y, 0);
         Sign1.bodyType = RigidbodyType2D.Static;
+    }
+
+    public void RestartCount()
+    {
+        TouchCounter = 0;
     }
 }
