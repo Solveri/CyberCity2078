@@ -8,6 +8,8 @@ public class FallingObjects : MonoBehaviour
     [SerializeField] Animator SignAnimation1;
     [SerializeField] Animator SignAnimation2;
 
+    int TouchCounter;
+
     Vector3 SignPosition;
 
     void Start()
@@ -15,38 +17,49 @@ public class FallingObjects : MonoBehaviour
         Sign1.bodyType = RigidbodyType2D.Static;
 
         SignPosition = Sign1.position;
+
+        TouchCounter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount == 1)
         {
-            Touch touch = Input.GetTouch(0);
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                TouchCounter++;
+            }
 
-            Falling(touch);
+            Falling(Input.GetTouch(0));
         }
     }
 
     private void Falling(Touch touch)
     {
-        switch (touch.phase)
+        if (TouchCounter == 2)
         {
-            case TouchPhase.Began:
-                SignAnimation1.SetBool("Touched", true);
-                SignAnimation2.SetBool("Touched", true);
-                break;
+            Debug.Log("Double Tap");
 
-            case TouchPhase.Moved:
-                SignAnimation1.SetBool("Touched", true);
-                SignAnimation2.SetBool("Touched", true);
-                break;
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    SignAnimation1.SetBool("Touched", true);
+                    SignAnimation2.SetBool("Touched", true);
+                    break;
 
-            case TouchPhase.Ended:
-                SignAnimation1.SetBool("Touched", false);
-                SignAnimation2.SetBool("Touched", false);
-                Sign1.bodyType = RigidbodyType2D.Dynamic;
-                break;
+                case TouchPhase.Moved:
+                    SignAnimation1.SetBool("Touched", true);
+                    SignAnimation2.SetBool("Touched", true);
+                    break;
+
+                case TouchPhase.Ended:
+                    SignAnimation1.SetBool("Touched", false);
+                    SignAnimation2.SetBool("Touched", false);
+                    TouchCounter = 0;
+                    Sign1.bodyType = RigidbodyType2D.Dynamic;
+                    break;
+            }
         }
     }
 
