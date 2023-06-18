@@ -39,33 +39,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 dir;
 
-
-   
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
-    {
-
-
-        
-
+    { 
         isGrounded = Physics2D.OverlapCapsule(groundPoint.position, new Vector2(0.94f, 0.17f), CapsuleDirection2D.Horizontal, 0, groundLayer);
 
         anim.SetBool("IsGrounded", isGrounded);
         anim.SetFloat("MoveX", Mathf.Abs(rb.velocity.x));
-       
-        
-
     }
+
     private void FixedUpdate()
     {
-        
-
         if (LeftKey.key == InputKeyController.Keys.Left && LeftKey.isPressed && isGrounded)
         {
             dir = Vector2.left;
@@ -75,10 +59,8 @@ public class PlayerController : MonoBehaviour
                 transform.Rotate(0, 180, 0);
                 isLeft = true;
             }
-            
-
-
         }
+
         else if (RightKey.key == InputKeyController.Keys.Right && RightKey.isPressed && isGrounded)
         {
             dir = Vector2.right;
@@ -113,36 +95,22 @@ public class PlayerController : MonoBehaviour
             ShootBullet();
             StartCoroutine(RestGun(gunCooldown));
         }
-       
-
-       
-
-       
-        
-
-
     }
+
     private IEnumerator RestSwing(float delay)
     {
         yield return new WaitForSeconds(delay);
         HasSwang = false;
     }
+
     private IEnumerator RestGun(float delay)
     {
         yield return new WaitForSeconds(delay);
         HasShot = false;
     }
+
     public void ShootBullet()
     {
-        newBullet = Instantiate(BulletPreFabs, ShootPoint.transform.position, ShootPoint.transform.rotation);
-      
-        
-        
+        newBullet = Instantiate(BulletPreFabs, ShootPoint.transform.position, ShootPoint.transform.rotation);      
     }
-   
-        
-  
-
-
-
 }
