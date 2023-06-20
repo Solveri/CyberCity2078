@@ -6,6 +6,7 @@ public class HitBoxScript : MonoBehaviour
 {
     public GameObject HitBox;
     public GameObject AirHitBox;
+
     void Start()
     {
         HitBox.SetActive(false);

@@ -9,7 +9,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] HPUIController HPUI;
 
     private int currentHP;
-
     public int HP
     {
         get 
@@ -36,6 +35,7 @@ public class PlayerScript : MonoBehaviour
         int damageTaken = dmg;
         damageTaken = currentHP;
         currentHP -= dmg;
+
         if (currentHP < 0)
         {
             currentHP = 0;

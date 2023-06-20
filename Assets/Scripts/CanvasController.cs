@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class CanvasController : MonoBehaviour
 {
-    [SerializeField] AmmoManagement am;
     public TextMeshProUGUI rounds;
+
+    [SerializeField] AmmoManagement am;
 
     private void Start()
     {

@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerHealthSystem : MonoBehaviour
 {
     public int MaxHealth = 100;
-
-    private int currentHP;
     public bool isDead = false;
 
+    private int currentHP;
 
     private void Start()
     {
@@ -22,6 +21,7 @@ public class PlayerHealthSystem : MonoBehaviour
             isDead = true;
             return;
         }
+
         Debug.Log("Taken Damage");
     }
 }

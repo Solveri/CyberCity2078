@@ -12,7 +12,7 @@ public class HPUIController : MonoBehaviour
     [SerializeField] List<GameObject> Segments;
     [SerializeField] List<Image> SegmentsUI;
 
-    static int counterHP;
+    int counterHP;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class HPUIController : MonoBehaviour
         counterHP = player.HP;
         img.color = Color.magenta;
         Debug.Log(player.HP);
+
         for (int i = 0; i < player.HP; i++)
         {
             var currentSegment = Instantiate(HPSegment);

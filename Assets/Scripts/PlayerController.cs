@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform parentTransform;
 
     [SerializeField] Transform groundPoint;
-    public  bool isGrounded;
+    public bool isGrounded;
     public bool HasSwang = false;
     public bool HasShot = false;
     public bool isLeft = false;
@@ -42,15 +42,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        isGrounded = Physics2D.OverlapCapsule(groundPoint.position, new Vector2(0.94f, 0.17f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        //isGrounded = Physics2D.OverlapCapsule(groundPoint.position, new Vector2(0.94f, 0.17f), CapsuleDirection2D.Horizontal, 0, groundLayer);
 
-        anim.SetBool("IsGrounded", isGrounded);
+        //anim.SetBool("IsGrounded", isGrounded);
         anim.SetFloat("MoveX", Mathf.Abs(rb.velocity.x));
     }
 
     private void FixedUpdate()
     {
-        if (LeftKey.key == InputKeyController.Keys.Left && LeftKey.isPressed && isGrounded)
+        if (LeftKey.key == InputKeyController.Keys.Left && LeftKey.isPressed)
         {
             dir = Vector2.left;
             rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, 0);
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        else if (RightKey.key == InputKeyController.Keys.Right && RightKey.isPressed && isGrounded)
+        else if (RightKey.key == InputKeyController.Keys.Right && RightKey.isPressed)
         {
             dir = Vector2.right;
             rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, 0);
@@ -82,12 +82,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+
         if(SwingKey.key == InputKeyController.Keys.Swing && SwingKey.isPressed && !HasSwang)
         {
             anim.SetTrigger("Attack");
             HasSwang = true;
             StartCoroutine(RestSwing(swingCooldown));
         }
+
         else if (ShootKey.key == InputKeyController.Keys.Shoot && ShootKey.isPressed && !HasShot)
         {
             anim.SetTrigger("Shoot");
@@ -112,5 +114,20 @@ public class PlayerController : MonoBehaviour
     public void ShootBullet()
     {
         newBullet = Instantiate(BulletPreFabs, ShootPoint.transform.position, ShootPoint.transform.rotation);      
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.collider.name == "Collider")
+        {
+            isGrounded = true;
+            anim.SetBool("IsGrounded", isGrounded);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        isGrounded = false;
+        anim.SetBool("IsGrounded", isGrounded);
     }
 }

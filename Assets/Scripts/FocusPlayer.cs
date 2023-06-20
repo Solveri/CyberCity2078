@@ -16,7 +16,5 @@ public class FocusPlayer : MonoBehaviour
 
             PauseMenu.SetActive(true);
         }
-
-        Debug.Log(focus);
     }
 }

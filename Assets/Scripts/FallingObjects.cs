@@ -26,6 +26,7 @@ public class FallingObjects : MonoBehaviour
     {
         if (Input.touchCount == 1)
         {
+            //Count the touches and return the count touch to zero after a short time
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 TouchCounter++;
@@ -36,6 +37,7 @@ public class FallingObjects : MonoBehaviour
         }
     }
 
+    //Activate the fall and animations of the signs
     private void Falling(Touch touch)
     {
         if (TouchCounter == 2)

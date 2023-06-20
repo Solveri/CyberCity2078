@@ -14,12 +14,15 @@ public class InputKeyController : MonoBehaviour,IPointerDownHandler, IPointerUpH
         Swing,
         Shoot
     }
+
     public Keys key;
     public bool isPressed;
+
     public void OnPointerDown(PointerEventData eventData)
     {
         isPressed = true;
     }
+
     public void OnPointerUp(PointerEventData eventData)
     {
         isPressed = false;

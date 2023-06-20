@@ -9,9 +9,6 @@ public class AmmoManagement : MonoBehaviour
     public int currentBulletsInMagazine;
     public bool isMagEmpty;
 
-
-
-
     private void Awake()
     {
         currentBulletsInMagazine = MagazineSize;
@@ -28,7 +25,4 @@ public class AmmoManagement : MonoBehaviour
             isMagEmpty = false;
         }
     }
-
-   
-
 }
