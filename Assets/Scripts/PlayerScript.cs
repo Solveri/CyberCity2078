@@ -24,12 +24,6 @@ public class PlayerScript : MonoBehaviour
         currentHP = maxHP;    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) TakeDamage(1);
-    }
-
     public void TakeDamage(int dmg)
     {
         int damageTaken = dmg;

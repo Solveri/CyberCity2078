@@ -9,7 +9,9 @@ public class EnemyScript : MonoBehaviour
     // Probably would have used a "character" base class to inherit from, but we have yet to properly learn it in C#
 
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Transform Dispatch;
     [SerializeField] ScoreScript scoreManager;
+    [SerializeField] HPUIController HPUI;
     [SerializeField] int maxHP = 10;
     [SerializeField] int enemyScore = 100;
     [SerializeField] float deathAnimationDuration = 1f;
@@ -37,6 +39,11 @@ public class EnemyScript : MonoBehaviour
             currentHP = 0;
             isDead = true;
         }
+
+        for (int i = 0; i < dmg; i++)
+        {
+            HPUI.ChangeHPSegments();
+        }
     }
     private void KillEnemy()
     {
@@ -55,5 +62,17 @@ public class EnemyScript : MonoBehaviour
 
         // Darken in color
         spriteRenderer.DOColor(Color.black, deathAnimationDuration).OnComplete(() => Destroy(gameObject));
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.name == "GroundRadius")
+        {
+            transform.position = new Vector2(Dispatch.position.x, Dispatch.position.y);
+
+            TakeDamage(1);
+
+            PlayerController.isGrounded = true;
+        }
     }
 }

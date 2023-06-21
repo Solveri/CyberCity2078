@@ -36,6 +36,7 @@ public class PlayerChaseAI : MonoBehaviour
     {
         // play animation
         // if collides with player, player takes damage
+        // Update is called once per frame
     }
 
     private void MoveTowardsPlayer()

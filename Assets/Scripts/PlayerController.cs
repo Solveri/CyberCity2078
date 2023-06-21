@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject ShootPoint;
     [SerializeField] GameObject BulletPreFabs;
     [SerializeField] Transform parentTransform;
-
     [SerializeField] Transform groundPoint;
-    public bool isGrounded;
+
+    public static bool isGrounded; //In the enemy script
     public bool HasSwang = false;
     public bool HasShot = false;
     public bool isLeft = false;
@@ -44,8 +44,10 @@ public class PlayerController : MonoBehaviour
     { 
         //isGrounded = Physics2D.OverlapCapsule(groundPoint.position, new Vector2(0.94f, 0.17f), CapsuleDirection2D.Horizontal, 0, groundLayer);
 
-        //anim.SetBool("IsGrounded", isGrounded);
+        anim.SetBool("IsGrounded", isGrounded);
         anim.SetFloat("MoveX", Mathf.Abs(rb.velocity.x));
+
+        Debug.Log(isGrounded);
     }
 
     private void FixedUpdate()
@@ -67,7 +69,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, 0);
             if (isLeft)
             {
-               
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 isLeft = false;
             }
@@ -127,7 +128,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        isGrounded = false;
-        anim.SetBool("IsGrounded", isGrounded);
+        if (other.collider.name == "Collider")
+        {
+            isGrounded = false;
+            anim.SetBool("IsGrounded", isGrounded);
+        }
     }
 }

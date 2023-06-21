@@ -319,8 +319,10 @@ PolygonCollider2D:
       - {x: 57.72815, y: -85.592224}
       - {x: -0.95105654, y: -92.05607}
       - {x: -29.451921, y: -58.5372}
-      - {x: -22.503523, y: 120.42017}
-      - {x: 209.45276, y: 25.897568}
+      - {x: -82.13835, y: 147.52689}
+      - {x: 4.336792, y: 120.79932}
+      - {x: 143.26105, y: 73.3958}
+      - {x: 339.56506, y: 25.897568}
       - {x: 266.50067, y: -80.51053}
 --- !u!1 &72106559
 GameObject:
@@ -2448,9 +2450,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerBody
       objectReference: {fileID: 0}
+    - target: {fileID: 6573300894620005331, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573300894620005334, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005334, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: m_GravityScale
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: UpKey
@@ -2728,6 +2738,14 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 1621669986}
+    - target: {fileID: 883655341, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: HPUI
+      value: 
+      objectReference: {fileID: 72106561}
+    - target: {fileID: 883655341, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: Dispatch
+      value: 
+      objectReference: {fileID: 1974169287}
     - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2990,8 +3008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44673822337895a4691b275de87b3aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  am: {fileID: 1504809756}
   rounds: {fileID: 1813005093}
+  am: {fileID: 1504809756}
 --- !u!4 &1371094238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 835159540499024808, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
@@ -3498,6 +3516,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7278364432925821205, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
   m_PrefabInstance: {fileID: 1222310521}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1722978451
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722978449}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1740941200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3784,6 +3823,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5518569856274021750, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1725
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518569856274021750, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -109
+      objectReference: {fileID: 0}
     - target: {fileID: 5518569856274021751, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
       propertyPath: enemy
       value: 
@@ -4478,6 +4525,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963975742}
   m_CullTransparentMesh: 1
+--- !u!4 &1974169287 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5518569856274021750, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
+  m_PrefabInstance: {fileID: 1811172200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1983128583
 GameObject:
   m_ObjectHideFlags: 0
