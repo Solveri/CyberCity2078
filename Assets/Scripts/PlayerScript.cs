@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class PlayerScript : MonoBehaviour
         if (currentHP < 0)
         {
             currentHP = 0;
+            SceneManager.LoadScene(2);
         }
         for (int i = 0; i < dmg; i++)
         {
@@ -49,6 +51,14 @@ public class PlayerScript : MonoBehaviour
         for (int i = 0; i < healthHealed; i++)
         {
 
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
+        {
+            TakeDamage(1);
         }
     }
 }
