@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FocusPlayer.Pause = false;
+
         Menu.SetActive(false);
     }
 }

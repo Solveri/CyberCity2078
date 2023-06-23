@@ -20,9 +20,12 @@ public class SpawnEnemyScript : MonoBehaviour
     }
     private void Spawn()
     {
-        if (LimitSpawnEnemyScript.isEnemyLimitReached) return;
-        GameObject newEnemy = Instantiate(enemy, transform.position, transform.rotation);
-        newEnemy.SetActive(true);
-        LimitSpawnEnemyScript.IncreaseEnemyAmount();
+        if (FocusPlayer.Pause == false)
+        {
+            if (LimitSpawnEnemyScript.isEnemyLimitReached) return;
+            GameObject newEnemy = Instantiate(enemy, transform.position, transform.rotation);
+            newEnemy.SetActive(true);
+            LimitSpawnEnemyScript.IncreaseEnemyAmount();
+        }
     }
 }

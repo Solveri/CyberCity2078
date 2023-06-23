@@ -20,16 +20,21 @@ public class PlayerChaseAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         distance = Vector2.Distance(player.transform.position, transform.position);
         Vector2 direction = player.transform.position - transform.position;
         if (distance < MaxDistance) isInRange = true;
         else isInRange = false;
     }
+        
     private void FixedUpdate()
     {
-        //if (EnemyScript.isDead) return;
-        if (!isInRange) MoveTowardsPlayer();
-        if (isInRange) AttackPlayer();
+        if (FocusPlayer.Pause == false)
+        {
+            //if (EnemyScript.isDead) return;
+            if (!isInRange) MoveTowardsPlayer();
+            if (isInRange) AttackPlayer();
+        }
     }
 
     private void AttackPlayer()
