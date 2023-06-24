@@ -7,11 +7,11 @@ public class ScoreScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textScore;
 
-    private int playerScore;
+    public static int playerScore;
 
     public void addScore(int score)
     {
-        playerScore += score;
-        textScore.text = "Score: " + playerScore.ToString();
+       playerScore += score;
+       textScore.text = "Score: " + playerScore.ToString();
     }
 }

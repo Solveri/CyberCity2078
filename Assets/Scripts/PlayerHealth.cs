@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     // Probably would have used a "character" base class to inherit from, but we have yet to properly learn it in C#
     [SerializeField] int maxHP = 6;
@@ -56,7 +56,8 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
+        if (other.collider.name == "Enemy" & !PlayerController.HasSwang 
+            || other.collider.name == "Enemy(Clone)" & !PlayerController.HasSwang)
         {
             TakeDamage(1);
         }

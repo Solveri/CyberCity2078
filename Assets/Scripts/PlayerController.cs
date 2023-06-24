@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,14 +22,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sr;
+    [SerializeField] EnemyScript KillEnemy;
 
     [SerializeField] GameObject ShootPoint;
     [SerializeField] GameObject BulletPreFabs;
+
     [SerializeField] Transform parentTransform;
     [SerializeField] Transform groundPoint;
+    [SerializeField] Transform SpawnEnemy;
 
     public static bool isGrounded; //In the enemy script
-    public bool HasSwang = false;
+    public static bool HasSwang = false;
     public bool HasShot = false;
     public bool isLeft = false;
     
@@ -121,6 +125,20 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             anim.SetBool("IsGrounded", isGrounded);
+        }
+
+        if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
+        {
+            if (HasSwang)
+            {
+                if (KillEnemy != null)
+                {
+                    other.collider.transform.position = SpawnEnemy.position;
+                    KillEnemy.KillEnemy();
+                    Debug.Log("Hit");
+                }
+
+            }
         }
     }
 

@@ -40,7 +40,7 @@ public class EnemyScript : MonoBehaviour
             isDead = true;
         }
     }
-    private void KillEnemy()
+    public void KillEnemy()
     {
         DeathAnimation();
         scoreManager.addScore(enemyScore);

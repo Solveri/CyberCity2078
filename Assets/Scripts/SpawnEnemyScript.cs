@@ -20,7 +20,7 @@ public class SpawnEnemyScript : MonoBehaviour
     }
     private void Spawn()
     {
-        if (FocusPlayer.Pause == false)
+        if (FocusPlayer.Pause == false && enemy != null)
         {
             if (LimitSpawnEnemyScript.isEnemyLimitReached) return;
             GameObject newEnemy = Instantiate(enemy, transform.position, transform.rotation);

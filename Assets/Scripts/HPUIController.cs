@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HPUIController : MonoBehaviour
 {
-    [SerializeField] PlayerScript player;
+    [SerializeField] PlayerHealth player;
     [SerializeField] GameObject HPSegment;
     [SerializeField] Image img;
     [SerializeField] List<GameObject> Segments;

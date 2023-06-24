@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 109356759}
   - component: {fileID: 109356761}
   - component: {fileID: 109356760}
+  - component: {fileID: 109356762}
   m_Layer: 5
   m_Name: Score Text
   m_TagString: Untagged
@@ -540,6 +541,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109356758}
   m_CullTransparentMesh: 1
+--- !u!114 &109356762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109356758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72fce8386b5b784eaeed42d16dfda12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textScore: {fileID: 109356760}
 --- !u!1 &111669965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2477,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1722978452}
+    - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: UpKey
       value: 
       objectReference: {fileID: 1575859776}
@@ -2483,9 +2501,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 546259056}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: KillEnemy
+      value: 
+      objectReference: {fileID: 1722978453}
+    - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: jumpForce
       value: 43
       objectReference: {fileID: 0}
+    - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: SpawnEnemy
+      value: 
+      objectReference: {fileID: 1974169287}
+    - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 109356762}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
 --- !u!4 &1132905892 stripped
@@ -2773,6 +2803,10 @@ PrefabInstance:
       propertyPath: Dispatch
       value: 
       objectReference: {fileID: 1974169287}
+    - target: {fileID: 883655341, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 109356762}
     - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3564,6 +3598,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!4 &1722978452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+  m_PrefabInstance: {fileID: 1222310521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1722978453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 883655341, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+  m_PrefabInstance: {fileID: 1222310521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722978449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931e620c2fca66b4e8480d6021594819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1740941200
 GameObject:
   m_ObjectHideFlags: 0
