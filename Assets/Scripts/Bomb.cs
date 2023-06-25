@@ -7,6 +7,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] GameObject Explode;
     [SerializeField] Rigidbody2D RotateBomb;
     [SerializeField] GameObject AirPlaine;
+    [SerializeField] PlayerHealth LifePlayer;
 
     [System.Obsolete]
     private void Start()
@@ -28,15 +29,39 @@ public class Bomb : MonoBehaviour
         Explode.SetActive(false);
     }
 
-    private void OnCollisionEnter2D(Collision2D Other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (Other.collider.name == "Collider")
+        Debug.Log(other.collider.name);
+
+        if (other.collider.name == "Collider")
         {
             gameObject.SetActive(false);
 
             Explode.transform.position = new Vector2(transform.position.x, transform.position.y);
 
             Explode.SetActive(true);
+        }
+
+        if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
+        {
+            other.gameObject.SetActive(false);
+
+            Explode.transform.position = new Vector2(transform.position.x, transform.position.y);
+
+            Explode.SetActive(true);
+
+            Spawn();
+        }
+
+        if (other.collider.name == "GroundRadius")
+        {
+            LifePlayer.TakeDamage(1);
+
+            Explode.transform.position = new Vector2(transform.position.x, transform.position.y);
+
+            Explode.SetActive(true);
+
+            Spawn();
         }
     }
 

@@ -892,6 +892,10 @@ PrefabInstance:
       propertyPath: AirPlaine
       value: 
       objectReference: {fileID: 111669965}
+    - target: {fileID: 8832014421787461811, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
+      propertyPath: LifePlayer
+      value: 
+      objectReference: {fileID: 1504809755}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
 --- !u!1 &261528012
@@ -2256,6 +2260,10 @@ PrefabInstance:
       propertyPath: AirPlaine
       value: 
       objectReference: {fileID: 111669965}
+    - target: {fileID: 8832014421787461811, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
+      propertyPath: LifePlayer
+      value: 
+      objectReference: {fileID: 1504809755}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
 --- !u!1 &1094873550
