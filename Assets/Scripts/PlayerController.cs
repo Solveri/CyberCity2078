@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("IsGrounded", isGrounded);
         anim.SetFloat("MoveX", Mathf.Abs(rb.velocity.x));
+
+        Debug.Log(PlayerChaseAI.distance);
     }
 
     private void FixedUpdate()

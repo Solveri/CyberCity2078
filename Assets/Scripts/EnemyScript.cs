@@ -42,7 +42,7 @@ public class EnemyScript : MonoBehaviour
     }
     public void KillEnemy()
     {
-        DeathAnimation();
+        //DeathAnimation();
         scoreManager.addScore(enemyScore);
         LimitSpawnEnemyScript.DecreaseEnemyAmount();
     }

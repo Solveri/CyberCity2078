@@ -14,7 +14,7 @@ public class PlayerChaseAI : MonoBehaviour
 
     //[SerializeField] float attackCooldown = 0.5f;
 
-    float distance;
+    public static float distance;
     bool isInRange = false;
 
     // Update is called once per frame

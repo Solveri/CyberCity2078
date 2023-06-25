@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.name == "Enemy" & !PlayerController.HasSwang 
+        if (other.collider.name == "Enemy" & !PlayerController.HasSwang
             || other.collider.name == "Enemy(Clone)" & !PlayerController.HasSwang)
         {
             TakeDamage(1);
