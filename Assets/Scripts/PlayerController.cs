@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     private Vector2 dir;
-    private float PosY = 0;
+    private float PlayerPosY = 0;
 
     // Update is called once per frame
     void Update()
@@ -52,16 +52,15 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsGrounded", isGrounded);
         anim.SetFloat("MoveX", Mathf.Abs(rb.velocity.x));
 
-        Debug.Log(PosY);
-
+        //This method activate when the player move to the right or the left
         if(isGrounded == false)
         {
-            PosY = -200;
+            PlayerPosY = -200;
         }
 
         else 
         { 
-            PosY = 0; 
+            PlayerPosY = 0; 
         }
     }
 
@@ -70,7 +69,7 @@ public class PlayerController : MonoBehaviour
         if (LeftKey.key == InputKeyController.Keys.Left && LeftKey.isPressed)
         {
             dir = Vector2.left;
-            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, PosY);
+            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, PlayerPosY);
             if (!isLeft)
             {
                 transform.Rotate(0, 180, 0);
@@ -81,7 +80,7 @@ public class PlayerController : MonoBehaviour
         else if (RightKey.key == InputKeyController.Keys.Right && RightKey.isPressed)
         {
             dir = Vector2.right;
-            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, PosY);
+            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, PlayerPosY);
             if (isLeft)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
