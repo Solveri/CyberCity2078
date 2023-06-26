@@ -148,5 +148,15 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             anim.SetBool("IsGrounded", isGrounded);
         }
+
+        if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
+        {
+            Invoke("Grounded", 0.1f);
+        }
+    }
+
+    public void Grounded()
+    {
+        isGrounded = false;
     }
 }

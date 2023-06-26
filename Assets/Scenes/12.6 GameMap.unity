@@ -2482,7 +2482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005334, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: m_GravityScale
-      value: 7
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: Enemy
@@ -2514,7 +2514,7 @@ PrefabInstance:
       objectReference: {fileID: 1722978453}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: jumpForce
-      value: 43
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: SpawnEnemy

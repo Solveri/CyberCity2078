@@ -26,14 +26,21 @@ public class PlayerChaseAI : MonoBehaviour
         if (distance < MaxDistance) isInRange = true;
         else isInRange = false;
     }
-        
+
+    [Obsolete]
     private void FixedUpdate()
-    {
-        if (FocusPlayer.Pause == false)
-        {
+      {
+          if (FocusPlayer.Pause == false)
+          {
+              gameObject.SetActive(true);
             //if (EnemyScript.isDead) return;
             if (!isInRange) MoveTowardsPlayer();
-            if (isInRange) AttackPlayer();
+              if (isInRange) AttackPlayer();
+          }
+
+          else if(FocusPlayer.Pause == true)
+          {
+            gameObject.SetActive(false);
         }
     }
 
