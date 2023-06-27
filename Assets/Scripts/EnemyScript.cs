@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.Services.Analytics;
+
 
 public class EnemyScript : MonoBehaviour
 {
@@ -45,6 +47,8 @@ public class EnemyScript : MonoBehaviour
         //DeathAnimation();
         scoreManager.addScore(enemyScore);
         LimitSpawnEnemyScript.DecreaseEnemyAmount();
+        AnalyticsService.Instance.CustomData("EnemyKilled");
+        AnalyticsService.Instance.Flush();
     }
 
     private void DeathAnimation()
@@ -68,4 +72,6 @@ public class EnemyScript : MonoBehaviour
             PlayerController.isGrounded = true;
         }
     }
+
+
 }
