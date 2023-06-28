@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform parentTransform;
     [SerializeField] Transform groundPoint;
     [SerializeField] Transform SpawnEnemy;
+    [SerializeField] Transform TeleportPosition;
 
     public static bool isGrounded; //In the enemy script
     public static bool HasSwang = false;
@@ -137,6 +138,16 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             anim.SetBool("IsGrounded", isGrounded);
+        }
+
+        if(other.collider.name == "Elevators")
+        {
+            transform.position = new Vector2(TeleportPosition.position.x, TeleportPosition.position.y);
+        }
+
+        if (other.collider.name == "Ladder")
+        {
+            transform.position = new Vector2(TeleportPosition.position.x, TeleportPosition.position.y);
         }
 
         if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
