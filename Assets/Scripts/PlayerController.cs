@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         //This method activate when the player move to the right or the left
         if(isGrounded == false)
         {
-            PlayerPosY = -200;
+            PlayerPosY = -43;
         }
 
         else 
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
         {
-            Invoke("Grounded", 0.1f);
+            Invoke("Grounded", 0.01f);
         }
     }
 
