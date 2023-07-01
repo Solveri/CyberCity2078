@@ -2536,6 +2536,10 @@ PrefabInstance:
       propertyPath: TeleportPosition
       value: 
       objectReference: {fileID: 1721506017}
+    - target: {fileID: 6573300894903362492, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.27
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
 --- !u!4 &1132905892 stripped
@@ -2830,6 +2834,14 @@ PrefabInstance:
     - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_LocalPosition.x

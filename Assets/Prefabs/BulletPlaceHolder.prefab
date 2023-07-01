@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1048153972}
+  SpawnEnemy: {fileID: 5518569857396066732, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
   bulletSpeed: 10000
   lifeTime: 3
 --- !u!50 &1048153972

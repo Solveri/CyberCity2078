@@ -5,8 +5,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Transform SpawnEnemy;
 
-    
+
     public float bulletSpeed = 15f;
     public float lifeTime = 3f;
     
@@ -25,9 +26,13 @@ public class Projectile : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Hey");
+        if(other.name == "Enemy" || other.name == "Enemy(Clone)")
+        {
+            other.transform.position = SpawnEnemy.position;
+            Destroy(gameObject);
+        }
     }
 
 }
