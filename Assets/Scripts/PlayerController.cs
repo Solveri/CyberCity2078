@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         
 
-        isGrounded = Physics2D.OverlapCapsule(groundPoint.position, new Vector2(0.94f, 0.17f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        isGrounded = Physics2D.OverlapCapsule(groundPoint.position, new Vector2(0.656022847f, 0.198957995f), CapsuleDirection2D.Horizontal, 0, groundLayer);
 
         anim.SetBool("IsGrounded", isGrounded);
         anim.SetFloat("MoveX", Mathf.Abs(rb.velocity.x));
