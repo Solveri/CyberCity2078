@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         if (LeftKey.key == InputKeyController.Keys.Left && LeftKey.isPressed)
         {
             dir = Vector2.left;
-            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, PlayerPosY);
+            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, rb.velocity.y);
             if (!isLeft)
             {
                 transform.Rotate(0, 180, 0);
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         else if (RightKey.key == InputKeyController.Keys.Right && RightKey.isPressed)
         {
             dir = Vector2.right;
-            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, PlayerPosY);
+            rb.velocity = new Vector2(dir.x * speed * Time.fixedDeltaTime, rb.velocity.y);
             if (isLeft)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);

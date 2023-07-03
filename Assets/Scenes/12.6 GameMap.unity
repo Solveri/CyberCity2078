@@ -2486,7 +2486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005334, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: m_GravityScale
-      value: 16
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005334, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: m_CollisionDetection
@@ -2500,6 +2500,10 @@ PrefabInstance:
       propertyPath: UpKey
       value: 
       objectReference: {fileID: 1575859776}
+    - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: speed
+      value: 11000
+      objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: LeftKey
       value: 
@@ -2522,7 +2526,7 @@ PrefabInstance:
       objectReference: {fileID: 1722978453}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: jumpForce
-      value: 200
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: SpawnEnemy
@@ -2836,14 +2840,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 124
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 124
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -349
       objectReference: {fileID: 0}
@@ -2886,10 +2882,6 @@ PrefabInstance:
     - target: {fileID: 7278364432925821205, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278364432925821205, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
@@ -3640,27 +3632,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7278364432925821205, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
   m_PrefabInstance: {fileID: 1222310521}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &1722978451
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722978449}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!4 &1722978452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
