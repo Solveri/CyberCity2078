@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 111669966}
   - component: {fileID: 111669968}
   m_Layer: 0
-  m_Name: spaceship
+  m_Name: Spaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -830,7 +830,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 835159540499024790, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
       propertyPath: m_Name
-      value: bomb
+      value: Bomb
       objectReference: {fileID: 0}
     - target: {fileID: 835159540499024790, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
       propertyPath: m_IsActive
@@ -2198,15 +2198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 835159540499024790, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
       propertyPath: m_Name
-      value: bomb
-      objectReference: {fileID: 0}
-    - target: {fileID: 835159540499024790, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 835159540499024790, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
-      propertyPath: m_TagString
-      value: 2
+      value: Bomb
       objectReference: {fileID: 0}
     - target: {fileID: 835159540499024808, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
       propertyPath: m_RootOrder
@@ -2252,18 +2244,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8832014421787461811, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
-      propertyPath: Explode
-      value: 
-      objectReference: {fileID: 530940603}
-    - target: {fileID: 8832014421787461811, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
-      propertyPath: AirPlaine
-      value: 
-      objectReference: {fileID: 111669965}
-    - target: {fileID: 8832014421787461811, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
-      propertyPath: LifePlayer
-      value: 
-      objectReference: {fileID: 1504809755}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d644cf02bef4ce74fb954eddc4f3445a, type: 3}
 --- !u!1 &1094873550
@@ -2979,7 +2959,7 @@ GameObject:
   - component: {fileID: 1369176368}
   - component: {fileID: 1369176369}
   m_Layer: 5
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3663,7 +3643,7 @@ GameObject:
   - component: {fileID: 1740941202}
   - component: {fileID: 1740941201}
   m_Layer: 0
-  m_Name: Pause
+  m_Name: Pause Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

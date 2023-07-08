@@ -51,6 +51,7 @@ public class EnemyScript : MonoBehaviour
 
     private void DeathAnimation()
     {
+        Debug.Log(gameObject);
         // Shrink in size
         transform.DOScale(Vector3.zero, deathAnimationDuration);
 

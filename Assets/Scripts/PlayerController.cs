@@ -13,10 +13,15 @@ public class PlayerController : MonoBehaviour
     public InputKeyController SwingKey;
     public InputKeyController ShootKey;
 
+    public LayerMask groundLayer;
     public float speed = 5f;
     public float jumpForce = 5f;
     public float swingCooldown = 0.5f;
     public float gunCooldown = 1f;
+    public static bool isGrounded; //In the enemy script
+    public static bool HasSwang = false;
+    public bool HasShot = false;
+    public bool isLeft = false;
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
@@ -31,16 +36,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform spawnEnemy;
     [SerializeField] Transform teleportPosition;
 
-    public static bool isGrounded; //In the enemy script
-    public static bool HasSwang = false;
-    public bool HasShot = false;
-    public bool isLeft = false;
-    
-
     private GameObject newBullet;
     List<GameObject> bulletsInGame = new List<GameObject>();
-    public LayerMask groundLayer;
-
     private Vector2 dir;
     private float PlayerPosY = 0;
 

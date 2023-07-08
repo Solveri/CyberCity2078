@@ -7,6 +7,9 @@ public class SwingingScript : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hey");
+        if (collision.name == "Enemy")
+        {
+            collision.gameObject.SendMessage("KillEnemy");
+        }
     }
 }
