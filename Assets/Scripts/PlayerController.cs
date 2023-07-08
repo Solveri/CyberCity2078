@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public InputKeyController SwingKey;
     public InputKeyController ShootKey;
 
-
     public float speed = 5f;
     public float jumpForce = 5f;
     public float swingCooldown = 0.5f;
@@ -22,15 +21,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sr;
-    [SerializeField] EnemyScript KillEnemy;
+    [SerializeField] EnemyScript killEnemy;
 
-    [SerializeField] GameObject ShootPoint;
-    [SerializeField] GameObject BulletPreFabs;
+    [SerializeField] GameObject shootPoint;
+    [SerializeField] GameObject bulletPreFabs;
 
     [SerializeField] Transform parentTransform;
     [SerializeField] Transform groundPoint;
-    [SerializeField] Transform SpawnEnemy;
-    [SerializeField] Transform TeleportPosition;
+    [SerializeField] Transform spawnEnemy;
+    [SerializeField] Transform teleportPosition;
 
     public static bool isGrounded; //In the enemy script
     public static bool HasSwang = false;
@@ -129,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
     public void ShootBullet()
     {
-        newBullet = Instantiate(BulletPreFabs, ShootPoint.transform.position, ShootPoint.transform.rotation);      
+        newBullet = Instantiate(bulletPreFabs, shootPoint.transform.position, shootPoint.transform.rotation);      
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -142,22 +141,22 @@ public class PlayerController : MonoBehaviour
 
         if(other.collider.name == "Elevators")
         {
-            transform.position = new Vector2(TeleportPosition.position.x, TeleportPosition.position.y);
+            transform.position = new Vector2(teleportPosition.position.x, teleportPosition.position.y);
         }
 
         if (other.collider.name == "Ladder")
         {
-            transform.position = new Vector2(TeleportPosition.position.x, TeleportPosition.position.y);
+            transform.position = new Vector2(teleportPosition.position.x, teleportPosition.position.y);
         }
 
         if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
         {
             if (HasSwang)
             {
-                if (KillEnemy != null)
+                if (killEnemy != null)
                 {
-                    other.collider.transform.position = SpawnEnemy.position;
-                    KillEnemy.KillEnemy();
+                    other.collider.transform.position = spawnEnemy.position;
+                    killEnemy.KillEnemy();
                 }
 
             }
