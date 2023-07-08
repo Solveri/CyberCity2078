@@ -2834,6 +2834,10 @@ PrefabInstance:
       value: 110
       objectReference: {fileID: 0}
     - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: PlayerSprite
+      value: 
+      objectReference: {fileID: 1608844363}
+    - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 1621669986}
@@ -3341,6 +3345,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1608844363 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8090749707837544974, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+  m_PrefabInstance: {fileID: 1222310521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616304096
 GameObject:
   m_ObjectHideFlags: 0
