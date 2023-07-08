@@ -17,10 +17,9 @@ public class PlayerChaseAI : MonoBehaviour
     public static float distance;
     bool isInRange = false;
 
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
-
         distance = Vector2.Distance(player.transform.position, transform.position);
         Vector2 direction = player.transform.position - transform.position;
         if (distance < maxDistance) isInRange = true;
@@ -30,16 +29,17 @@ public class PlayerChaseAI : MonoBehaviour
     [Obsolete]
     private void FixedUpdate()
       {
-          if (FocusPlayer.Pause == false)
-          {
-              gameObject.SetActive(true);
+        if (FocusPlayer.Pause == false)
+        {
+            gameObject.SetActive(true);
+
             //if (EnemyScript.isDead) return;
             if (!isInRange) MoveTowardsPlayer();
-              if (isInRange) AttackPlayer();
-          }
+            if (isInRange) AttackPlayer();
+        }
 
-          else if(FocusPlayer.Pause == true)
-          {
+        else if (FocusPlayer.Pause == true)
+        {
             gameObject.SetActive(false);
         }
     }
