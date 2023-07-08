@@ -10,7 +10,7 @@ public class PlayerChaseAI : MonoBehaviour
     [SerializeField] Collider2D enemyCollider;
     [SerializeField] Animator attackAnimator;
     [SerializeField] float speed = 3f;
-    [SerializeField] float MaxDistance = 1f;
+    [SerializeField] float maxDistance = 1f;
 
     //[SerializeField] float attackCooldown = 0.5f;
 
@@ -23,7 +23,7 @@ public class PlayerChaseAI : MonoBehaviour
 
         distance = Vector2.Distance(player.transform.position, transform.position);
         Vector2 direction = player.transform.position - transform.position;
-        if (distance < MaxDistance) isInRange = true;
+        if (distance < maxDistance) isInRange = true;
         else isInRange = false;
     }
 
@@ -53,7 +53,7 @@ public class PlayerChaseAI : MonoBehaviour
 
     private void MoveTowardsPlayer()
     {
-        Vector2 targetPosition = new Vector2(player.transform.position.x, transform.position.y);
+        Vector2 targetPosition = new Vector2(player.transform.position.x - maxDistance, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }

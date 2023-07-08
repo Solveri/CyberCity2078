@@ -2502,7 +2502,7 @@ PrefabInstance:
       objectReference: {fileID: 1575859776}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: speed
-      value: 11000
+      value: 12000
       objectReference: {fileID: 0}
     - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: LeftKey
@@ -2819,6 +2819,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1621669985}
+    - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: maxDistance
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: playerCollider
       value: 
@@ -4218,7 +4222,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4257,7 +4261,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
