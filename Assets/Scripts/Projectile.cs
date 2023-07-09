@@ -5,19 +5,14 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] Transform SpawnEnemy;
-
-
-    public float bulletSpeed = 15f;
-    public float lifeTime = 3f;
-    
+    [SerializeField] float lifeTime = 3f;
+    [SerializeField] float bulletSpeed = 15f;
 
     private void Start()
     {
         rb.velocity = transform.right * bulletSpeed * Time.deltaTime;
         StartCoroutine(DestoryRoutine());
     }
-    // Start is called before the first frame update
 
     private IEnumerator DestoryRoutine()
     {
@@ -26,12 +21,11 @@ public class Projectile : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.name == "Enemy" || other.name == "Enemy(Clone)")
+        if (collision.name == "Enemy" || collision.name == "Enemy(Clone)")
         {
-            other.transform.position = SpawnEnemy.position;
-            Destroy(gameObject);
+            collision.gameObject.SendMessage("KillEnemy");
         }
     }
 

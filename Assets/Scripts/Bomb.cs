@@ -31,7 +31,7 @@ public class Bomb : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.collider.name);
+        //Debug.Log(other.collider.name);
 
         if (other.collider.name == "Collider")
         {

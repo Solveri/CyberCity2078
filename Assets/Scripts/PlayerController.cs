@@ -155,7 +155,6 @@ public class PlayerController : MonoBehaviour
                     other.collider.transform.position = spawnEnemy.position;
                     killEnemy.KillEnemy();
                 }
-
             }
         }
     }
@@ -170,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
         {
-            Invoke("Grounded", 0.01f);
+            //Invoke("Grounded", 0.01f);
         }
     }
 

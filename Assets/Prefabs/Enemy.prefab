@@ -53,7 +53,7 @@ MonoBehaviour:
   enemyCollider: {fileID: 7380881509170615301}
   attackAnimator: {fileID: 0}
   speed: 200
-  MaxDistance: 1.5
+  maxDistance: 110
 --- !u!61 &7380881509170615301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8491279228587364230
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,8 +14,8 @@ public class PlayerChaseAI : MonoBehaviour
 
     //[SerializeField] float attackCooldown = 0.5f;
 
-    public static float distance;
-    bool isInRange = false;
+    private static float distance;
+    private bool isInRange = false;
 
     // Update is called once per frame
     void Update()
@@ -54,7 +54,9 @@ public class PlayerChaseAI : MonoBehaviour
     private void MoveTowardsPlayer()
     {
         Vector2 targetPosition = new Vector2(player.transform.position.x - maxDistance, transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, targetPosition.x, speed * Time.deltaTime), transform.position.y);
+        //Vector2 targetPosition = new Vector2(player.transform.position.x - maxDistance, transform.position.y);
+        //transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }

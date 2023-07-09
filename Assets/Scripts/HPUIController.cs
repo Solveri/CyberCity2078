@@ -21,7 +21,7 @@ public class HPUIController : MonoBehaviour
         img.color = Color.magenta;
         Debug.Log(player.HP);
 
-        for (int i = 0; i < player.HP; i++)
+        for (int i = 0; i <= player.HP; i++)
         {
             var currentSegment = Instantiate(HPSegment);
             currentSegment.transform.SetParent(gameObject.transform);
