@@ -2551,6 +2551,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5518569857396066732, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
   m_PrefabInstance: {fileID: 1811172200}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1153346616 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8090749707837544974, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+  m_PrefabInstance: {fileID: 1222310521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211174537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,6 +2828,14 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 110
       objectReference: {fileID: 0}
+    - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: PlayerSprite
+      value: 
+      objectReference: {fileID: 1153346616}
+    - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 1153346616}
     - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: playerCollider
       value: 

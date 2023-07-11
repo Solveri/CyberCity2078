@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerChaseAI : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] SpriteRenderer PlayerSprite;
     [SerializeField] Collider2D playerCollider;
     [SerializeField] Collider2D enemyCollider;
     [SerializeField] Animator attackAnimator;
@@ -30,18 +31,19 @@ public class PlayerChaseAI : MonoBehaviour
     [Obsolete]
     private void FixedUpdate()
       {
-          if (FocusPlayer.Pause == false)
-          {
-              gameObject.SetActive(true);
+        if (FocusPlayer.Pause == false)
+        {
+            PlayerSprite.enabled = true;
             //if (EnemyScript.isDead) return;
             if (!isInRange) MoveTowardsPlayer();
-              if (isInRange) AttackPlayer();
-          }
-
-          else if(FocusPlayer.Pause == true)
-          {
-            gameObject.SetActive(false);
+            if (isInRange) AttackPlayer();
         }
+
+        else if (FocusPlayer.Pause == true)
+        {
+            PlayerSprite.enabled = false;
+        }
+        
     }
 
     private void AttackPlayer()
