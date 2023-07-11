@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Opening.unity
     guid: 835c4880713ac8f438b804f5cce32ae4
   - enabled: 1
-    path: Assets/Scenes/12.6 GameMap.unity
+    path: Assets/Scenes/9.7 Enemies.unity
     guid: a6b51ca19feecaf45b716136c47be4d7
   - enabled: 1
     path: Assets/Scenes/FailGame.unity
