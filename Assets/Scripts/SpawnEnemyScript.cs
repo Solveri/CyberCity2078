@@ -6,7 +6,6 @@ public class SpawnEnemyScript : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
     [SerializeField] float spawnCoolDown = 5f;
-    public static GameObject newEnemy;
     private float timer = 0;
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class SpawnEnemyScript : MonoBehaviour
         if (FocusPlayer.Pause == false && enemy != null)
         {
             if (LimitSpawnEnemyScript.isEnemyLimitReached) return;
-            newEnemy = Instantiate(enemy, transform.position, transform.rotation);
+            GameObject newEnemy = Instantiate(enemy, transform.position, transform.rotation);
             newEnemy.SetActive(true);
             LimitSpawnEnemyScript.IncreaseEnemyAmount();
         }
