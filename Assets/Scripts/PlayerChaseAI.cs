@@ -18,6 +18,15 @@ public class PlayerChaseAI : MonoBehaviour
     public static float distance;
     bool isInRange = false;
 
+    private void Start()
+    {
+        if (player.transform.position.x < enemyCollider.transform.position.x)
+        {
+            Debug.Log("true");
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -57,6 +66,7 @@ public class PlayerChaseAI : MonoBehaviour
     {
         Vector2 targetPosition = new Vector2(player.transform.position.x - maxDistance, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        //Vector2 direction = player.transform.position - transform.position;
         //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }

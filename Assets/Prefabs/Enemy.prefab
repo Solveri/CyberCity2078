@@ -49,11 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  PlayerSprite: {fileID: 0}
   playerCollider: {fileID: 0}
   enemyCollider: {fileID: 7380881509170615301}
   attackAnimator: {fileID: 0}
   speed: 200
-  MaxDistance: 1.5
+  maxDistance: 1
 --- !u!61 &7380881509170615301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8491279228587364230
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2403940958786397180}
   - component: {fileID: 8090749707837544974}
+  - component: {fileID: 8371373700487235835}
   m_Layer: 0
   m_Name: Enemy Graphics
   m_TagString: Untagged
@@ -204,3 +206,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8371373700487235835
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491279228587364230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8f5a3375c7651c4fb583fa3c3a34bbf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
