@@ -32,8 +32,8 @@ public class PlayerChaseAI : MonoBehaviour
     {
 
         distance = Vector2.Distance(player.transform.position, transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        if (distance < maxDistance) isInRange = true;
+        //Vector2 direction = player.transform.position - transform.position;
+        if (distance - 10 < maxDistance) isInRange = true;
         else isInRange = false;
     }
 
@@ -45,7 +45,7 @@ public class PlayerChaseAI : MonoBehaviour
             PlayerSprite.enabled = true;
             //if (EnemyScript.isDead) return;
             if (!isInRange) MoveTowardsPlayer();
-            if (isInRange) AttackPlayer();
+            if (isInRange) AttackPlayer(); 
         }
 
         else if (FocusPlayer.Pause == true)
@@ -60,13 +60,15 @@ public class PlayerChaseAI : MonoBehaviour
         // play animation
         // if collides with player, player takes damage
         // Update is called once per frame
+        attackAnimator.SetBool("Attack", true);
     }
 
     private void MoveTowardsPlayer()
     {
-        Vector2 targetPosition = new Vector2(player.transform.position.x - maxDistance, transform.position.y);
+        Vector3 targetPosition = new Vector3(player.transform.position.x - maxDistance, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        //Vector2 direction = player.transform.position - transform.position;
+        attackAnimator.SetBool("Attack", false);
+        //Vector3 direction = player.transform.position - transform.position;
         //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }
