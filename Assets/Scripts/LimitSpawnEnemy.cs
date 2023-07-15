@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LimitSpawnEnemyScript : MonoBehaviour
+public class LimitSpawnEnemy : MonoBehaviour
 {
     public static bool isEnemyLimitReached = false;
     

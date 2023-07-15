@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemyScript : MonoBehaviour
+public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
     [SerializeField] float spawnCoolDown = 5f;
@@ -23,10 +23,10 @@ public class SpawnEnemyScript : MonoBehaviour
     {
         if (FocusPlayer.Pause == false && enemy != null)
         {
-            if (LimitSpawnEnemyScript.isEnemyLimitReached) return;
+            if (LimitSpawnEnemy.isEnemyLimitReached) return;
             GameObject newEnemy = Instantiate(enemy, transform.position, transform.rotation, transform.parent);
             newEnemy.SetActive(true);
-            LimitSpawnEnemyScript.IncreaseEnemyAmount();
+            LimitSpawnEnemy.IncreaseEnemyAmount();
         }
     }
 }

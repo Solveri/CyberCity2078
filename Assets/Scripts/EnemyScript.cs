@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -14,7 +13,6 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] HPUIController HPUI;
     [SerializeField] int maxHP = 10;
     [SerializeField] int enemyScore = 100;
-    [SerializeField] float deathAnimationDuration = 1f;
 
     private bool isDead = false;
     private int currentHP;
@@ -43,7 +41,7 @@ public class EnemyScript : MonoBehaviour
     public void KillEnemy()
     {
         scoreManager.AddScore(enemyScore);
-        LimitSpawnEnemyScript.DecreaseEnemyAmount();
+        LimitSpawnEnemy.DecreaseEnemyAmount();
         Debug.Log("enemy dead");
         if (gameObject.name == "Enemy") gameObject.SetActive(false);
         else Destroy(gameObject);
