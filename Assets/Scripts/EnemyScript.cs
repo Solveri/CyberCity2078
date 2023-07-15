@@ -42,36 +42,10 @@ public class EnemyScript : MonoBehaviour
     }
     public void KillEnemy()
     {
-        //DeathAnimation();
-        DeathAnimation();
         scoreManager.AddScore(enemyScore);
         LimitSpawnEnemyScript.DecreaseEnemyAmount();
         Debug.Log("enemy dead");
         if (gameObject.name == "Enemy") gameObject.SetActive(false);
         else Destroy(gameObject);
     }
-
-    private void DeathAnimation()
-    {
-        //Debug.Log(gameObject);
-        //// Shrink in size
-        //this.transform.DOScale(Vector3.zero, deathAnimationDuration).OnComplete(() => Destroy(gameObject));
-        //gameObject.SetActive(false);
-
-        //// Fade out
-        //spriteRenderer.DOFade(0f, deathAnimationDuration);
-
-        //// Darken in color
-        //spriteRenderer.DOColor(Color.black, deathAnimationDuration).OnComplete(() => Destroy(gameObject));
-    }
-
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.collider.name == "GroundRadius")
-    //    {
-    //        transform.position = new Vector2(Dispatch.position.x, Dispatch.position.y);
-
-    //        PlayerController.isGrounded = true;
-    //    }
-    //}
 }

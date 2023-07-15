@@ -5,23 +5,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Vector2 Dir() {{ return dir; }  }
-    public InputKeyController UpKey;
-    public InputKeyController DownKey;
-    public InputKeyController LeftKey;
-    public InputKeyController RightKey;
-    public InputKeyController SwingKey;
-    public InputKeyController ShootKey;
-
-    public LayerMask groundLayer;
-    public float speed = 5f;
-    public float jumpForce = 5f;
-    public float swingCooldown = 0.5f;
-    public float gunCooldown = 1f;
-    public static bool isGrounded; //In the enemy script
     public static bool HasSwang = false;
-    public bool HasShot = false;
-    public bool isLeft = false;
+
+    //public Vector2 Dir() {{ return dir; }  }
+    [SerializeField] InputKeyController UpKey;
+    [SerializeField] InputKeyController DownKey;
+    [SerializeField] InputKeyController LeftKey;
+    [SerializeField] InputKeyController RightKey;
+    [SerializeField] InputKeyController SwingKey;
+    [SerializeField] InputKeyController ShootKey;
+
+    //public LayerMask groundLayer;
+    [SerializeField] float speed = 5f;
+    [SerializeField] float jumpForce = 5f;
+    [SerializeField] float swingCooldown = 0.5f;
+    [SerializeField] float gunCooldown = 1f;
+    [SerializeField] static bool isGrounded; //In the enemy script
+    [SerializeField] bool hasShot = false;
+    [SerializeField] bool isLeft = false;
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform teleportPosition;
 
     private GameObject newBullet;
-    List<GameObject> bulletsInGame = new List<GameObject>();
+    //List<GameObject> bulletsInGame = new List<GameObject>();
     private Vector2 dir;
     private float PlayerPosY = 0;
 
@@ -102,10 +103,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(RestSwing(swingCooldown));
         }
 
-        else if (ShootKey.key == InputKeyController.Keys.Shoot && ShootKey.isPressed && !HasShot)
+        else if (ShootKey.key == InputKeyController.Keys.Shoot && ShootKey.isPressed && !hasShot)
         {
             anim.SetTrigger("Shoot");
-            HasShot = true;
+            hasShot = true;
             ShootBullet();
             StartCoroutine(RestGun(gunCooldown));
         }
@@ -120,7 +121,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator RestGun(float delay)
     {
         yield return new WaitForSeconds(delay);
-        HasShot = false;
+        hasShot = false;
     }
 
     public void ShootBullet()
