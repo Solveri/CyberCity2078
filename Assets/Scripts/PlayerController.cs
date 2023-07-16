@@ -60,6 +60,16 @@ public class PlayerController : MonoBehaviour
         { 
             PlayerPosY = 0; 
         }
+
+        if (transform.position.x < 0)
+        {
+            transform.position = new Vector2(transform.position.x + 20, transform.position.y);
+        }
+
+        else if (transform.position.x > Screen.width)
+        {
+            transform.position = new Vector2(transform.position.x - 20, transform.position.y);
+        }
     }
 
     private void FixedUpdate()

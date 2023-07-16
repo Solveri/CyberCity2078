@@ -2632,6 +2632,10 @@ PrefabInstance:
       propertyPath: TeleportPosition
       value: 
       objectReference: {fileID: 1721506017}
+    - target: {fileID: 6573300894620005335, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
+      propertyPath: teleportPosition
+      value: 
+      objectReference: {fileID: 1721506017}
     - target: {fileID: 6573300894903362492, guid: 1fe42cfe9f852b44693f5161ee2740c2, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.27
@@ -2916,6 +2920,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621669985}
     - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: PlayerSprite
+      value: 
+      objectReference: {fileID: 1249270905}
+    - target: {fileID: -5642072838256125514, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 1621669986}
@@ -2937,7 +2945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -266
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 7267719514319466741, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2979,6 +2987,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8090749707837544974, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: m_Size.x
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090749707837544974, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: m_Size.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090749707837544974, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1743
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090749707837544974, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
 --- !u!1 &1227691073
@@ -3015,6 +3039,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1249270905 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8090749707837544974, guid: 2f28a394f116a454eb4ac773e735ed63, type: 3}
+  m_PrefabInstance: {fileID: 1222310521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1307804424
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,6 +4163,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1722978449}
+    - target: {fileID: 5518569856274021751, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
+      propertyPath: spawnCoolDown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5518569856634958742, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
       propertyPath: m_LocalPosition.x
       value: -243
@@ -4146,6 +4179,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1722978449}
+    - target: {fileID: 5518569856634958743, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
+      propertyPath: spawnCoolDown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5518569857396066732, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -4192,7 +4229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518569857396066733, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
       propertyPath: maxEnemyAmount
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5518569857396066735, guid: a950e0fa010d44e4f9015b4552f10446, type: 3}
       propertyPath: m_Name
