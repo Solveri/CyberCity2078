@@ -63,6 +63,16 @@ public class PlayerController : MonoBehaviour
         { 
             PlayerPosY = 0; 
         }
+
+        if(transform.position.x < 0)
+        {
+            transform.position = new Vector2(transform.position.x + 20 , transform.position.y);
+        }
+
+        else if(transform.position.x > Screen.width)
+        {
+            transform.position = new Vector2(transform.position.x - 20, transform.position.y);
+        }
     }
 
     private void FixedUpdate()
@@ -172,10 +182,10 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("IsGrounded", isGrounded);
         }
 
-        if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
-        {
-            Invoke("Grounded", 0.01f);
-        }
+       //if (other.collider.name == "Enemy" || other.collider.name == "Enemy(Clone)")
+        //{
+            //Invoke("Grounded", 0.01f);
+        //}
     }
 
     public void Grounded()

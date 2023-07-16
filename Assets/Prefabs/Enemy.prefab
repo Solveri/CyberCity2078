@@ -52,9 +52,9 @@ MonoBehaviour:
   PlayerSprite: {fileID: 0}
   playerCollider: {fileID: 0}
   enemyCollider: {fileID: 7380881509170615301}
-  attackAnimator: {fileID: 0}
+  attackAnimator: {fileID: 8371373700487235835}
   speed: 200
-  maxDistance: 1
+  maxDistance: 110
 --- !u!61 &7380881509170615301
 BoxCollider2D:
   m_ObjectHideFlags: 0
