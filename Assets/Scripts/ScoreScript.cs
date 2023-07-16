@@ -5,12 +5,13 @@ using TMPro;
 
 public class ScoreScript : MonoBehaviour
 {
+    public static int PlayerScore;
+
     [SerializeField] TextMeshProUGUI textScore;
-    [SerializeField] static int playerScore;
 
     public void AddScore(int score)
     {
-       playerScore += score;
-       textScore.text = "Score: " + playerScore.ToString();
+       PlayerScore += score;
+       textScore.text = "Score: " + PlayerScore.ToString();
     }
 }

@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
         else if (transform.position.x > Screen.width)
         {
             transform.position = new Vector2(transform.position.x - 20, transform.position.y);
+            Debug.Log(transform.position.x);
         }
     }
 
