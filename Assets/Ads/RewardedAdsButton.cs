@@ -5,6 +5,7 @@ using UnityEngine.Advertisements;
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] Button _showAdButton;
+    [SerializeField] PlayerHealth player;
     [SerializeField] string _androidAdUnitId = "5309426";
     [SerializeField] string _iOSAdUnitId = "5309427";
     string _adUnitId = null; // This will remain null for unsupported platforms
@@ -59,6 +60,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
+            player.Heal(1);
             // Grant a reward.
         }
     }

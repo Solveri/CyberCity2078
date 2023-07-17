@@ -1759,6 +1759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showAdButton: {fileID: 589922955}
+  player: {fileID: 1504809755}
   _androidAdUnitId: 5309426
   _iOSAdUnitId: 5309427
 --- !u!1 &668350255

@@ -29,18 +29,34 @@ public class HPUIController : MonoBehaviour
             SegmentsUI.Add(currentSegment.GetComponent<Image>());
             //Debug.Log(SegmentsUI[0]);
         }
+        counterHP = SegmentsUI.Count - 1;
     }
 
     public void ChangeHPSegments()
     {
         try
         {
-            SegmentsUI.Last().color = Color.black;
-            SegmentsUI.Remove(SegmentsUI.Last());
+            SegmentsUI[counterHP].color = Color.black;
+            counterHP--;
+            //SegmentsUI.Remove(SegmentsUI.Last());
         }
         catch (System.InvalidOperationException e)
         {
             Debug.Log("The guy should be super dead");
+        }
+    }
+
+    public void IncreaseHPSegment()
+    {
+        try
+        {
+            counterHP++;
+            SegmentsUI[player.HP].color = Color.magenta;
+        }
+        catch (System.Exception)
+        {
+
+            Debug.Log("Can't heal");
         }
     }
 }

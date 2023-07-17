@@ -46,8 +46,10 @@ public class PlayerHealth : MonoBehaviour
     {
         int healthHealed = currentHP;
         currentHP += healAmount;
-        healthHealed = currentHP - healthHealed;
+        Debug.Log(currentHP);
         if (currentHP > maxHP) currentHP = maxHP;
+        healthHealed = currentHP - healthHealed;
+        if(healthHealed > 0) HPUI.IncreaseHPSegment();
         for (int i = 0; i < healthHealed; i++)
         {
 
